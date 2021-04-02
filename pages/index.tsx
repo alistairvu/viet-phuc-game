@@ -1,23 +1,27 @@
-import Head from "next/head"
 import Container from "react-bootstrap/Container"
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import {
+  AppCategoryPicker,
+  AppCategorySelections,
+  AppCurrentChoices,
+} from "../components"
 
 const Home: React.FC = () => {
   return (
-    <div>
-      <Head>
-        <title>Create Next App Bootstrap</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <Container className="text-center py-5">
-          <h1>Welcome to NextJS!</h1>
-          <h3 style={{ fontSize: 30 }}>
-            Get started by editing <code style={{ color: "red" }}>pages/index.tsx</code>
-          </h3>
-        </Container>
-      </main>
-    </div>
+    <Container>
+      <Row>
+        <Col lg={3}>
+          <AppCategoryPicker />
+        </Col>
+        <Col lg={6}>
+          <AppCurrentChoices />
+        </Col>
+        <Col lg={3}>
+          <AppCategorySelections />
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
