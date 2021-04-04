@@ -14,7 +14,9 @@ const AppLayout: React.FC = ({ children }) => {
         <AppHeader />
       </header>
 
-      <main className="mt-3">{children}</main>
+      <main className="mt-3" style={{ height: "calc(100vh-70px)" }}>
+        {children}
+      </main>
     </RecoilRoot>
   )
 }

@@ -1,4 +1,4 @@
-import { atom } from "recoil"
+import { atom, selector } from "recoil"
 
 const categoryAtom = atom({
   key: "categoryAtom",
@@ -8,10 +8,18 @@ const categoryAtom = atom({
 const choiceAtom = atom({
   key: "choiceAtom",
   default: {
-    one: 0,
-    two: 0,
-    three: 0,
+    hat: 0,
+    body: 0,
+    shoes: 0,
   },
 })
 
-export { categoryAtom, choiceAtom }
+const choiceSelector = selector({
+  key: "choiceSelector",
+  get: ({ get }) => {
+    const { hat, body, shoes } = get(choiceAtom)
+    return `/images/hat-${hat}-body-${body}-shoes-${shoes}.png`
+  },
+})
+
+export { categoryAtom, choiceAtom, choiceSelector }

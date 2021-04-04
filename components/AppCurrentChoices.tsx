@@ -1,22 +1,15 @@
-import { choiceAtom } from "../recoil/gameAtom"
+import { choiceSelector } from "../recoil/gameAtom"
 import { useRecoilValue } from "recoil"
+import Image from "next/image"
 
 const AppCurrentChoices: React.FC = () => {
-  const choices = useRecoilValue(choiceAtom)
+  const choices = useRecoilValue(choiceSelector)
 
-  const renderChoices = () => {
-    const choiceList = []
-    for (const [key, value] of Object.entries(choices)) {
-      choiceList.push(
-        <li>
-          Category {key.charAt(0).toUpperCase() + key.slice(1)}: {value}
-        </li>
-      )
-    }
-    return choiceList
-  }
-
-  return <ul className="mt-lg-0 mt-2">{renderChoices()}</ul>
+  return (
+    <div className="mt-lg-0 mt-2 text-center">
+      <Image src={choices} layout="intrinsic" height={600} width={200} />
+    </div>
+  )
 }
 
 export default AppCurrentChoices

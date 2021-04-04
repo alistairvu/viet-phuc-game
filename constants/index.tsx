@@ -1,7 +1,7 @@
-export const CATEGORY_LIST = ["one", "two", "three"]
+export const CATEGORY_LIST = ["hat", "body", "shoes"]
 
 export const CATEGORY_LENGTH = {
-  one: 5,
-  two: 7,
-  three: 6,
+  hat: 2,
+  body: 2,
+  shoes: 2,
 }

@@ -2,6 +2,7 @@ import ListGroup from "react-bootstrap/ListGroup"
 import { CATEGORY_LENGTH, CATEGORY_LIST } from "../constants"
 import { categoryAtom, choiceAtom } from "../recoil/gameAtom"
 import { useRecoilState, useRecoilValue } from "recoil"
+import Image from "next/image"
 
 const AppSelections: React.FC = () => {
   const category = useRecoilValue(categoryAtom)
@@ -14,15 +15,19 @@ const AppSelections: React.FC = () => {
 
     const listGroupItems = []
     const itemCount = CATEGORY_LENGTH[category]
-    for (let i = 1; i <= itemCount; i++) {
+    for (let i = 0; i <= itemCount; i++) {
       listGroupItems.push(
         <ListGroup.Item
           action
           active={choice[category] === i}
           onClick={() => setChoice((prev) => ({ ...prev, [category]: i }))}
+          className="text-center"
         >
-          Category {category.charAt(0).toUpperCase() + category.slice(1)} -
-          Option {i}
+          {i > 0 ? (
+            <img src={`/images/${category}-${i}.png`} width={100} />
+          ) : (
+            <h4>Clear</h4>
+          )}
         </ListGroup.Item>
       )
     }

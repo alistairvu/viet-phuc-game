@@ -20,14 +20,12 @@ const AppCategoryPicker: React.FC = () => {
       <ListGroup
         className={`d-lg-block ${isOpen ? "d-block" : "d-none"} mt-lg-0 mt-2 `}
       >
-        {/* <ListGroup.Item action>Category 1</ListGroup.Item>
-        <ListGroup.Item action>Category 2</ListGroup.Item>
-        <ListGroup.Item action>Category 3</ListGroup.Item> */}
         {CATEGORY_LIST.map((item) => (
           <ListGroup.Item
             action
             active={item === category}
             onClick={() => setCategory(item)}
+            key={item}
           >
             {item.charAt(0).toUpperCase() + item.slice(1)}
           </ListGroup.Item>
