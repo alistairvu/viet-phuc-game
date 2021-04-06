@@ -33,3 +33,8 @@ $nprogress-bar-color: $primary;
     transform: rotate(3deg) translate(0px, -4px);
   }
 }
+
+body {
+  background-image: url("../public/background-01.png");
+  background-size: cover;
+}

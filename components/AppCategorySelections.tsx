@@ -34,7 +34,9 @@ const AppSelections: React.FC = () => {
     return listGroupItems
   }
 
-  return <ListGroup className="mt-2 mt-lg-0">{renderListGroup()}</ListGroup>
+  return (
+    <ListGroup className="mt-2 mb-2 mt-lg-0">{renderListGroup()}</ListGroup>
+  )
 }
 
 export default AppSelections
