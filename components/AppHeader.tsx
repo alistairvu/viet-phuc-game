@@ -5,7 +5,7 @@ const AppHeader: React.FC = () => {
   return (
     <Navbar variant="dark" bg="primary">
       <Container>
-        <Navbar.Brand>pw viet phuc</Navbar.Brand>
+        <Navbar.Brand>Viet Phuc Game</Navbar.Brand>
       </Container>
     </Navbar>
   )
